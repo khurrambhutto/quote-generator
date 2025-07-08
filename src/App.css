@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  background: #f7f6f3;
+  margin: 0;
+  font-family: 'Inter', 'Nothing', Arial, sans-serif;
+  /* Folded paper effect */
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.7) 60%, rgba(230,230,230,0.7) 100%),
+    linear-gradient(225deg, rgba(255,255,255,0.6) 60%, rgba(230,230,230,0.6) 100%),
+    repeating-linear-gradient(135deg, #f7f6f3 0px, #f7f6f3 40px, #ececec 41px, #ececec 80px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quote-app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  background: transparent;
+  font-family: 'Inter', 'Nothing', Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  color: #222;
+  margin-bottom: 32px;
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  background: none;
+  text-shadow: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.quote-box {
+  background: #fff;
+  padding: 36px 28px;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 28px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+
+.quote-text {
+  font-size: 1.35rem;
+  color: #222;
+  margin-bottom: 16px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.quote-author {
+  font-size: 1.05rem;
+  color: #888;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.loading {
+  color: #bbb;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 1.1rem;
+}
+
+.generate-btn {
+  background: #ffc7b5;
+  color: #222;
+  border: 1px solid #e0e0e0;
+  padding: 13px 34px;
+  font-size: 1.08rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Inter', 'Nothing', Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: background 0.18s, box-shadow 0.18s, color 0.18s;
+  outline: none;
+}
+
+.generate-btn:hover:not(:disabled) {
+  background: #ececec;
+  color: #111;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.generate-btn:disabled {
+  background: #f0f0f0;
+  color: #bbb;
+  cursor: not-allowed;
+  border: 1px solid #ededed;
 }
